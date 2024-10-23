@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class LeverPull : MonoBehaviour
 {
-    public GameObject ball; // Reference to the ball that will fall or another event trigger
-    public Transform leverHandle; // The lever's handle or pivot point
-    public float activationAngle = 45f; // Angle at which the lever triggers the event
-    private bool isLeverActivated = false; // Track if the lever has been activated
+    public GameObject ball; 
+    public Transform leverHandle; 
+    public float activationAngle = 45f; 
+    private bool isLeverActivated = false; 
     private void Start()
     {
         if (ball != null)
         {
             Rigidbody ballRb = ball.GetComponent<Rigidbody>();
-            ballRb.constraints = RigidbodyConstraints.FreezeAll; // Freeze the ball initially
+            ballRb.constraints = RigidbodyConstraints.FreezeAll; //freeze ball rotation
         }
     }
 
     private void Update()
     {
-        // Track lever's local rotation angle around the Z-axis or desired axis
+        // Track rotation
         float currentAngle = leverHandle.localEulerAngles.z;
 
-        // Handle 360-degree wrap-around by normalizing the angle
+        // Handler
         if (currentAngle > 180)
         {
             currentAngle -= 360;
         }
+        Debug.Log("Current Lever Angle: " + currentAngle);
 
-        // Trigger event if lever reaches or exceeds the activation angle
+        // Activation if Z is -45
         if (!isLeverActivated && currentAngle <= -activationAngle)
         {
+            Debug.Log("Lever has been activated!");
             ActivateLever();
         }
     }
@@ -43,8 +45,8 @@ public class LeverPull : MonoBehaviour
         if (ball != null)
         {
             Rigidbody ballRb = ball.GetComponent<Rigidbody>();
-            ballRb.constraints = RigidbodyConstraints.None; // Unfreeze the ball to fall
+            ballRb.constraints = RigidbodyConstraints.None; // Ball fall
         }
-        // Additional events like opening a door can go here
+        
     }
 }
