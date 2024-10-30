@@ -11,7 +11,7 @@ public class Button : MonoBehaviour
     private bool isPressed = false;     
     public GameObject Door;
     private Vector3 initialPosition;    // Store the initial position of the button
-
+   
     private void Start()
     {
         initialPosition = buttonTransform.localPosition;  // Set the button's initial position
