@@ -13,24 +13,24 @@ public class s : MonoBehaviour
     {
         if (isControllerColliding)
         {
-            Vector3 currentControllerPosition = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-            Debug.Log("Current Controller Position: " + currentControllerPosition);
+            Vector3 currentControllerPositionR = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
+            Debug.Log("Current Controller Position: " + currentControllerPositionR);
 
             if (!swipeStarted)
             {
                 initialBoxPosition = transform.position;
-                initialControllerPosition = currentControllerPosition;
+                initialControllerPosition = currentControllerPositionR;
                 swipeStarted = true;
                 Debug.Log("Swipe Started at Position: " + initialControllerPosition);
             }
             else
             {
                 // Detect swipe distance
-                float swipeDistance = initialControllerPosition.x - currentControllerPosition.x;
-                transform.position = initialBoxPosition + new Vector3(swipeDistance, 0, 0);
+                float swipeDistance = initialControllerPosition.x - currentControllerPositionR.x;
+                transform.position = initialBoxPosition - new Vector3(swipeDistance, 0, 0);
                 Debug.Log("Swipe Distance: " + swipeDistance);
 
-                if (swipeDistance > 0.1f) // Adjust threshold if needed
+                if (swipeDistance > 0.2f) // Adjust threshold if needed
                 {
                     Debug.Log("Swipe detected, destroying box.");
                     Destroy(gameObject);
