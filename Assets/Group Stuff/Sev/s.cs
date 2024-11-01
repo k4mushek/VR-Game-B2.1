@@ -6,6 +6,7 @@ public class s : MonoBehaviour
 {
     private bool isControllerColliding = false;
     private Vector3 initialControllerPosition;
+    private Vector3 initialBoxPosition;
     private bool swipeStarted = false;
 
     void Update()
@@ -17,6 +18,7 @@ public class s : MonoBehaviour
 
             if (!swipeStarted)
             {
+                initialBoxPosition = transform.position;
                 initialControllerPosition = currentControllerPosition;
                 swipeStarted = true;
                 Debug.Log("Swipe Started at Position: " + initialControllerPosition);
@@ -25,6 +27,7 @@ public class s : MonoBehaviour
             {
                 // Detect swipe distance
                 float swipeDistance = initialControllerPosition.x - currentControllerPosition.x;
+                transform.position = initialBoxPosition + new Vector3(swipeDistance, 0, 0);
                 Debug.Log("Swipe Distance: " + swipeDistance);
 
                 if (swipeDistance > 0.1f) // Adjust threshold if needed
