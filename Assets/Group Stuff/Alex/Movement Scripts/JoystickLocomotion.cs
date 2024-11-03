@@ -23,3 +23,4 @@ public class JoystickLocomotion : MonoBehaviour
         player.position = new Vector3(player.position.x, fixedY, player.position.z);
     }
 }
+    
