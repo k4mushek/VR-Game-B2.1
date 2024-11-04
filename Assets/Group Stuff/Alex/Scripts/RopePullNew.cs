@@ -16,14 +16,15 @@ public class RopePullNew : MonoBehaviour
     { 
         float triggerY = ropeSegment.position.y;
 
-        if (triggerY < activationHeight && isDoorOpen)
-            {
-                OpenDoor();
-            }
-            else if (triggerY >= activationHeight && !isDoorOpen)
-            {
-                CloseDoor();
-            }
+        if (triggerY < activationHeight && !isDoorOpen)
+        {
+            OpenDoor();
+        }
+
+        else if (triggerY >= activationHeight && isDoorOpen)
+        {
+            CloseDoor();
+        }
     }
 
     private void OpenDoor()
@@ -37,6 +38,6 @@ public class RopePullNew : MonoBehaviour
     {
         ceilingDoor.transform.position += new Vector3(-2, 0, 0);
         isDoorOpen = false;
-        Debug.Log("Ceiling Door Close");
+        Debug.Log("Ceiling Door Closed");
     }
 }
