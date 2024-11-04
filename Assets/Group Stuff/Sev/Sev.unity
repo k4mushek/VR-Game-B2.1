@@ -3887,7 +3887,7 @@ PrefabInstance:
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -3899,6 +3899,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9727,7 +9732,7 @@ PrefabInstance:
     - target: {fileID: 543175250819600276, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 969051862996033154, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -9822,7 +9827,7 @@ PrefabInstance:
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -9834,6 +9839,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11516,7 +11526,7 @@ PrefabInstance:
     - target: {fileID: 543175250819600276, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 969051862996033154, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -11611,7 +11621,7 @@ PrefabInstance:
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -11623,6 +11633,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16885,7 +16900,7 @@ PrefabInstance:
     - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
         type: 3}
@@ -16897,6 +16912,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8977502373198718042, guid: 4f5733c260249e844aa5d9cac835bcde,
         type: 3}
       propertyPath: m_Enabled
@@ -19005,7 +19025,7 @@ PrefabInstance:
     - target: {fileID: 543175250819600276, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 969051862996033154, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -19100,7 +19120,7 @@ PrefabInstance:
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -19112,6 +19132,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19892,7 +19917,7 @@ PrefabInstance:
     - target: {fileID: 543175250819600276, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 969051862996033154, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -19987,7 +20012,7 @@ PrefabInstance:
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -19999,6 +20024,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20082,7 +20112,7 @@ PrefabInstance:
     - target: {fileID: 543175250819600276, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 969051862996033154, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -20177,7 +20207,7 @@ PrefabInstance:
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
         type: 3}
@@ -20189,6 +20219,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 7616682902931762432, guid: 197adb1bb21657847a53d05b98db8210,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22060,7 +22095,7 @@ PrefabInstance:
     - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
         type: 3}
       propertyPath: offset.z
-      value: 0.55
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
         type: 3}
@@ -22072,6 +22107,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2873069965510342252, guid: 7edcf53262f6d034582839e89a3d1715,
         type: 3}
       propertyPath: m_Enabled
@@ -25429,7 +25469,7 @@ PrefabInstance:
     - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
         type: 3}
       propertyPath: offset.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
         type: 3}
@@ -25441,6 +25481,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
+        type: 3}
+      propertyPath: minSwipeDistance
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2306380426656834614, guid: cee90236e81fe6744b3aa2c4916c57a1,
         type: 3}
       propertyPath: m_Name
