@@ -1,15 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snapping : MonoBehaviour
+public class LeverSnap : MonoBehaviour
 {
+    [SerializeField] private GameObject lever;
     [SerializeField] private GameObject script;
-    bool snapped = false;
-    public GameObject snapparent; // the gameobject this transform will be snapped to
-    public Vector3 offset; // the offset of this object's position from the parent
+    private bool snapped = false;
+    [SerializeField] private GameObject snapparent; // the gameobject this transform will be snapped to
+    private Vector3 offset; // the offset of this object's position from the parent
     [SerializeField] private GameObject pickable;
-    
+
+    private void Start()
+    {
+        
+        
+    }
+
     void Update()
     {
 
@@ -23,22 +31,14 @@ public class Snapping : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "parentblock")
+        LeverPull leverscrt = lever.GetComponent<LeverPull>();
+        if (col.tag == "parentblock2")
         {
             snapped = true;
             snapparent = col.gameObject;
-            
+            leverscrt.enabled = true;
+            Destroy(pickable);
             offset = transform.position - snapparent.transform.position; //store relation to parent
-            
         }
     }
-
 }
-
-
-
-
-
-
-
-
