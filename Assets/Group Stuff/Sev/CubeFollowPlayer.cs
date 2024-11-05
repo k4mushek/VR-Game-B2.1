@@ -13,6 +13,7 @@ public class FollowAndSwipeBox : MonoBehaviour
     public Vector2 screenLimitX = new Vector2(-5f, 5f);  // X-axis screen limit for random positioning
     public Vector2 screenLimitY = new Vector2(1f, 5f);   // Y-axis screen limit for random positioning
 
+    private bool isGettingDestroyed = false;
     private bool isFollowing = true;
     private bool isRightControllerColliding = false;
     private bool isLeftControllerColliding = false;
@@ -94,6 +95,7 @@ public class FollowAndSwipeBox : MonoBehaviour
             newColor.a = Mathf.Lerp(1, 0, normalizedTime);
             originalMaterials[0].color = newColor;
             yield return null;
+            isGettingDestroyed = true;
         }
 
         boxRenderer.materials = originalMaterials;
@@ -140,7 +142,10 @@ public class FollowAndSwipeBox : MonoBehaviour
 
     private void ResetSwipe()
     {
-        swipeStarted = false;
-        isFollowing = true;
+        if (!isGettingDestroyed)
+        {
+            swipeStarted = false;
+            isFollowing = true;
+        }
     }
 }
