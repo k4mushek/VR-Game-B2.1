@@ -7,6 +7,12 @@ TagManager:
   - PlayerHand
   - Gem
   - parentblock
+  - ControllerL
+  - Controller
+  - ControllerR
+  - Target
+  - wall
+  - Door
   layers:
   - Default
   - TransparentFX

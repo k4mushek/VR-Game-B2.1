@@ -10,6 +10,6 @@ public class BallDestroyed : MonoBehaviour
       if (wall.gameObject.tag == "wall")
       {
          Destroy(gameObject);
-      };
+      }
    }
 }

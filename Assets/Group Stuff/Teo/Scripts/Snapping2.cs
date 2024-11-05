@@ -26,7 +26,7 @@ public class Snapping2 : MonoBehaviour
         {
             snapped = true;
             snapparent = col.gameObject;
-            Destroy(pickable);
+            
             offset = transform.position - snapparent.transform.position; //store relation to parent
         }
     }
