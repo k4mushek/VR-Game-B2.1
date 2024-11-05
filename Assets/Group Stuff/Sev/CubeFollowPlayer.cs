@@ -30,7 +30,7 @@ public class FollowAndSwipeBox : MonoBehaviour
     {
         // Randomize the x and y components of the offset within the range -0.2 to 0.2
         offset.x = Random.Range(-0.31f, 0.30f);
-        offset.y = Random.Range(-0.31f, 0.30f);
+        offset.y = Random.Range(-0.30f, 0.25f);
 
         // Initialize the box position with the new offset
         transform.position = playerCamera.position + playerCamera.rotation * offset;

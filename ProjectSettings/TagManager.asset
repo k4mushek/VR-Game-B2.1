@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerHand
+  - ControllerL
+  - Controller
+  - ControllerR
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Stencil Mask 1
   - 
   - 
   - 
