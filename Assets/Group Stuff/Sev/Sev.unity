@@ -6932,6 +6932,26 @@ PrefabInstance:
       objectReference: {fileID: 570471366}
     - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
         type: 3}
+      propertyPath: screenLimitX.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitX.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitY.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitY.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
       propertyPath: collisionMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 7ee402c5aa9e527439f3e86f5c1b7fc6, type: 2}
@@ -26040,6 +26060,26 @@ PrefabInstance:
       objectReference: {fileID: 570471366}
     - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
         type: 3}
+      propertyPath: screenLimitX.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
+        type: 3}
+      propertyPath: screenLimitX.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
+        type: 3}
+      propertyPath: screenLimitY.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
+        type: 3}
+      propertyPath: screenLimitY.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8877681229688722666, guid: 4f5733c260249e844aa5d9cac835bcde,
+        type: 3}
       propertyPath: collisionMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 7ee402c5aa9e527439f3e86f5c1b7fc6, type: 2}
@@ -26086,6 +26126,26 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
+        type: 3}
+      propertyPath: screenLimitX.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
+        type: 3}
+      propertyPath: screenLimitX.y
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
+        type: 3}
+      propertyPath: screenLimitY.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
+        type: 3}
+      propertyPath: screenLimitY.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1908433857010719486, guid: cee90236e81fe6744b3aa2c4916c57a1,
         type: 3}
       propertyPath: collisionMaterial
@@ -26214,6 +26274,26 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 570471366}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitX.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitX.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitY.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
+        type: 3}
+      propertyPath: screenLimitY.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2007642953457970157, guid: 7edcf53262f6d034582839e89a3d1715,
         type: 3}
       propertyPath: collisionMaterial

@@ -1,31 +1,37 @@
 using UnityEngine;
-using System.Collections;  // Ensure this is included for IEnumerator
+using System.Collections;
 
 public class FollowAndSwipeBox : MonoBehaviour
 {
-    public Transform playerCamera;           // Reference to the player's camera
-    public float followSpeed = 2f;           // Speed at which the cube follows the camera
+    public Transform playerCamera;            // Reference to the player's camera
+    public float followSpeed = 2f;            // Speed at which the cube follows the camera
     public Vector3 offset;                    // Offset from the camera's position
-    public float minSwipeDistance = 0.2f;    // Minimum swipe distance along local x-axis
-    public float swipeTimeWindow = 0.5f;     // Time window to complete a swipe
+    public float minSwipeDistance = 0.2f;     // Minimum swipe distance along local x-axis
+    public float swipeTimeWindow = 0.5f;      // Time window to complete a swipe
     public Material collisionMaterial;        // Material to apply when colliding with controller
     public float fadeDuration = 1f;           // Duration for the fade-out effect
+    public Vector2 screenLimitX = new Vector2(-5f, 5f);  // X-axis screen limit for random positioning
+    public Vector2 screenLimitY = new Vector2(1f, 5f);   // Y-axis screen limit for random positioning
 
-    private bool isFollowing = true;          // Controls whether the box is following the player
-    private bool isRightControllerColliding = false;  // Track if the right controller is colliding
-    private bool isLeftControllerColliding = false;   // Track if the left controller is colliding
+    private bool isFollowing = true;
+    private bool isRightControllerColliding = false;
+    private bool isLeftControllerColliding = false;
     private Vector3 initialControllerPosition;
     private Vector3 initialBoxPosition;
     private bool swipeStarted = false;
     private float swipeStartTime;
 
     private Renderer boxRenderer;
-    private Material[] originalMaterials;     // Original materials to revert back
-    private Color originalColor;               // Original color of the box
+    private Material[] originalMaterials;
+    private Color originalColor;
 
     void Start()
     {
-        // Initialize the box position with offset
+        // Randomize the x and y components of the offset within the range -0.2 to 0.2
+        offset.x = Random.Range(-0.2f, 0.2f);
+        offset.y = Random.Range(-0.2f, 0.2f);
+
+        // Initialize the box position with the new offset
         transform.position = playerCamera.position + playerCamera.rotation * offset;
 
         // Get the renderer and original materials
@@ -36,7 +42,6 @@ public class FollowAndSwipeBox : MonoBehaviour
 
     void Update()
     {
-        // Check for swipe on the right or left controller
         if (isRightControllerColliding || isLeftControllerColliding)
         {
             OVRInput.Controller activeController = isRightControllerColliding ? OVRInput.Controller.RTouch : OVRInput.Controller.LTouch;
@@ -44,15 +49,11 @@ public class FollowAndSwipeBox : MonoBehaviour
 
             HandleSwipe(currentControllerPosition);
         }
-        else
+        else if (playerCamera != null && isFollowing)
         {
-            if (playerCamera != null && isFollowing)
-            {
-                // Follow the player if no swipe is detected
-                Vector3 targetPosition = playerCamera.position + playerCamera.rotation * offset;
-                transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-                transform.LookAt(playerCamera);
-            }
+            Vector3 targetPosition = playerCamera.position + playerCamera.rotation * offset;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+            transform.LookAt(playerCamera);
         }
     }
 
@@ -60,29 +61,23 @@ public class FollowAndSwipeBox : MonoBehaviour
     {
         if (!swipeStarted)
         {
-            // Initialize swipe variables
             initialBoxPosition = transform.position;
             initialControllerPosition = currentControllerPosition;
             swipeStartTime = Time.time;
             swipeStarted = true;
-            isFollowing = false; // Stop following while swiping
+            isFollowing = false;
         }
         else
         {
-            // Calculate swipe distance along the box's local x-axis
             Vector3 controllerMovement = currentControllerPosition - initialControllerPosition;
             float swipeDistance = Vector3.Dot(controllerMovement, transform.right);
 
-            // Move box with controller movement along local x-axis
             transform.position = initialBoxPosition + transform.right * swipeDistance;
 
-            // Check if swipe distance and time meet criteria
             if (Mathf.Abs(swipeDistance) > minSwipeDistance && (Time.time - swipeStartTime) < swipeTimeWindow)
             {
-                Debug.Log("Swipe detected, destroying box.");
-                StartCoroutine(FadeOutAndDestroy()); // Start the fade-out coroutine
+                StartCoroutine(FadeOutAndDestroy());
             }
-            // Reset if swipe is too slow or movement is minimal
             else if (Time.time - swipeStartTime >= swipeTimeWindow)
             {
                 ResetSwipe();
@@ -92,20 +87,16 @@ public class FollowAndSwipeBox : MonoBehaviour
 
     private IEnumerator FadeOutAndDestroy()
     {
-        // Start fading out
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             float normalizedTime = t / fadeDuration;
             Color newColor = originalColor;
-            newColor.a = Mathf.Lerp(1, 0, normalizedTime);  // Fade to transparent
-            originalMaterials[0].color = newColor; // Apply to main material
+            newColor.a = Mathf.Lerp(1, 0, normalizedTime);
+            originalMaterials[0].color = newColor;
             yield return null;
         }
 
-        // Remove the outline material by setting the materials back to the original ones
-        boxRenderer.materials = originalMaterials; // Reset to original materials
-
-        // Destroy the box
+        boxRenderer.materials = originalMaterials;
         Destroy(gameObject);
     }
 
@@ -114,15 +105,11 @@ public class FollowAndSwipeBox : MonoBehaviour
         if (other.CompareTag("ControllerR"))
         {
             isRightControllerColliding = true;
-            Debug.Log("Right controller entered collision with box.");
-            // Apply the collision material when colliding
             ApplyCollisionMaterial();
         }
         else if (other.CompareTag("ControllerL"))
         {
             isLeftControllerColliding = true;
-            Debug.Log("Left controller entered collision with box.");
-            // Apply the collision material when colliding
             ApplyCollisionMaterial();
         }
     }
@@ -132,31 +119,28 @@ public class FollowAndSwipeBox : MonoBehaviour
         if (other.CompareTag("ControllerR"))
         {
             isRightControllerColliding = false;
-            Debug.Log("Right controller exited collision with box.");
-            ResetSwipe(); // Reset swipe state
+            ResetSwipe();
         }
         else if (other.CompareTag("ControllerL"))
         {
             isLeftControllerColliding = false;
-            Debug.Log("Left controller exited collision with box.");
-            ResetSwipe(); // Reset swipe state
+            ResetSwipe();
         }
 
-        // Remove the outline material when exiting collision
-        boxRenderer.materials = originalMaterials; // Reset materials to original
+        boxRenderer.materials = originalMaterials;
     }
 
     private void ApplyCollisionMaterial()
     {
         Material[] materialsWithOutline = new Material[originalMaterials.Length + 1];
-        materialsWithOutline[0] = collisionMaterial; // Set the outline material as the first element
-        originalMaterials.CopyTo(materialsWithOutline, 1); // Copy original materials to the array starting from index 1
-        boxRenderer.materials = materialsWithOutline; // Apply the new materials
+        materialsWithOutline[0] = collisionMaterial;
+        originalMaterials.CopyTo(materialsWithOutline, 1);
+        boxRenderer.materials = materialsWithOutline;
     }
 
     private void ResetSwipe()
     {
-        swipeStarted = false; // Reset swipe flag
-        isFollowing = true;   // Resume following
+        swipeStarted = false;
+        isFollowing = true;
     }
 }
