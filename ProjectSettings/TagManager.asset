@@ -5,14 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerHand
-  - Gem
-  - parentblock
   - ControllerL
   - Controller
   - ControllerR
-  - Target
-  - wall
-  - Door
   layers:
   - Default
   - TransparentFX
@@ -20,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Stencil Mask 1
   - 
   - 
   - 
