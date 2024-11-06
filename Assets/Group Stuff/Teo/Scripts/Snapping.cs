@@ -8,8 +8,7 @@ public class Snapping : MonoBehaviour
     bool snapped = false;
     public GameObject snapparent; // the gameobject this transform will be snapped to
     public Vector3 offset; // the offset of this object's position from the parent
-    [SerializeField] private GameObject pickable;
-    
+
     void Update()
     {
 
@@ -27,9 +26,7 @@ public class Snapping : MonoBehaviour
         {
             snapped = true;
             snapparent = col.gameObject;
-            
             offset = transform.position - snapparent.transform.position; //store relation to parent
-            
         }
     }
 

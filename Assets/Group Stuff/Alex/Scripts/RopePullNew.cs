@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class RopePullNew : MonoBehaviour
 {
-    [SerializeField]  private GameObject ball;
-    [SerializeField] private GameObject spawnpoint;
     [SerializeField]
     GameObject ceilingDoor;
-    [SerializeField] Transform ropeSegment;
-    [SerializeField] float activationHeight;
+    public Transform ropeSegment;
+    public float activationHeight;
 
     private bool isDoorOpen = false;
 
@@ -27,17 +25,6 @@ public class RopePullNew : MonoBehaviour
         {
             CloseDoor();
         }
-
-        if (ball == null)
-        {
-            Vector3 point = new Vector3(1, 1, 1);
-            Instantiate(ball, point, Quaternion.identity);
-
-
-        }
-        
-        
-        
     }
 
     private void OpenDoor()
@@ -49,7 +36,6 @@ public class RopePullNew : MonoBehaviour
 
     private void CloseDoor()
     {
-        
         ceilingDoor.transform.position += new Vector3(-2, 0, 0);
         isDoorOpen = false;
         Debug.Log("Ceiling Door Closed");

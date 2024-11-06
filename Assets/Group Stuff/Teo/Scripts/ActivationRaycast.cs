@@ -16,7 +16,6 @@ public class ActivationRaycast : MonoBehaviour
         {
             Raycast();
         }
-        Debug.Log("CYKA");
     }
 
     private void Raycast()

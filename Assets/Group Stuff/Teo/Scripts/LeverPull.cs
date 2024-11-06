@@ -27,7 +27,7 @@ public class LeverPull : MonoBehaviour
         {
             currentAngle -= 360;
         }
-        
+        Debug.Log("Current Lever Angle: " + currentAngle);
 
         // Activation if Z is -45
         if (!isLeverActivated && currentAngle <= -activationAngle)

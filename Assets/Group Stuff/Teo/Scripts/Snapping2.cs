@@ -5,10 +5,10 @@ using UnityEngine;
 public class Snapping2 : MonoBehaviour
 {
     [SerializeField] private GameObject script;
-    private bool snapped = false;
+    bool snapped = false;
     [SerializeField] private GameObject snapparent; // the gameobject this transform will be snapped to
-    private Vector3 offset; // the offset of this object's position from the parent
-    [SerializeField] private GameObject pickable;
+    public Vector3 offset; // the offset of this object's position from the parent
+
     void Update()
     {
 
@@ -26,7 +26,6 @@ public class Snapping2 : MonoBehaviour
         {
             snapped = true;
             snapparent = col.gameObject;
-            
             offset = transform.position - snapparent.transform.position; //store relation to parent
         }
     }

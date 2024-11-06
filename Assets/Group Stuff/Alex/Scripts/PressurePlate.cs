@@ -7,27 +7,17 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    Animator _slide;
-
-    private void Start()
-    {
-        _slide = GetComponent<Animator>();
-    }
+    [SerializeField]
+    GameObject door;
 
     void OnTriggerEnter(Collider Col)
     {
-       if (Col.gameObject.CompareTag("Door"))
-        {
-            _slide.SetTrigger("plate");
-        }
+        door.transform.position += new Vector3(2, 0, 0);
     }
 
     private void OnTriggerExit(Collider Col)
     {
-        if (Col.gameObject.CompareTag("Door"))
-        {
-            _slide.SetTrigger("plate");
-        }
+        door.transform.position += new Vector3(-2, 0, 0);
     }
 }
 
