@@ -7,13 +7,22 @@ public class Button : MonoBehaviour
     public Transform buttonTransform;  // 
     public float pressDepth = 0.1f;    // How far down the button is pressed
     public float pressThreshold = 0.05f; // How deep to consider it pressed
-  
+    [SerializeField] private GameObject ball;
     private bool isPressed = false;     
     public GameObject Door;
     private Vector3 initialPosition;    // Store the initial position of the button
    
     private void Start()
     {
+        if (ball != null)
+        {
+            Rigidbody ballRb = ball.GetComponent<Rigidbody>();
+            ballRb.constraints = RigidbodyConstraints.FreezeAll; //freeze ball rotation
+
+            
+ 
+        }
+
         initialPosition = buttonTransform.localPosition;  // Set the button's initial position
     }
 
@@ -42,6 +51,9 @@ public class Button : MonoBehaviour
         buttonTransform.localPosition = new Vector3(buttonTransform.localPosition.x,
                                                     buttonTransform.localPosition.y ,
                                                     buttonTransform.localPosition.z- pressDepth);
+        Rigidbody ballRb = ball.GetComponent<Rigidbody>();
+        ballRb.constraints = RigidbodyConstraints.None; // Ball fall
+
 
         // Trigger any event, such as opening a door, here
     }
